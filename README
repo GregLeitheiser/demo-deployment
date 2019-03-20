@@ -1,0 +1,56 @@
+Deployment instructions for demo.servantscode.org environment follow. 
+
+When we deploy somewhere else, these should be enhanced with the necessary details.
+
+#########################################
+Setup w/ Juju (On AWS)
+#########################################
+## Setting up Juju
+sudo add-apt-repository -u ppa:juju/stable
+sudo apt install juju
+
+juju add-credential aws
+-- creds for aws
+
+## Deploying kubernetes w/ AWS integration on Juju (On AWS)
+juju bootstrap aws/us-east-2 juju-controller
+juju add-model kubernetes
+juju deploy ./kubernetes-core.yaml --overlay ./k8s-aws-overlay.yaml
+juju trust aws-integrator
+
+## Wait a while
+## Check juju status for progress
+## When all is green then...
+
+## Deploying Parish Manager on Kubernetes (On Juju (On AWS))
+juju scp -r pm-config 0:.
+juju ssh 0
+docker login
+-- Log in here
+pushd ~/.docker
+kubectl create secret generic regcred  --from-file=.dockerconfigjson=./config.json --type=kubernetes.io/dockerconfigjson
+popd
+
+// Create necessary secrets in files, Record elsewhere for postarity
+kubectl create secret generic postgres-secrets --from-file=./password
+kubectl create secret generic db-client-secrets --from-file=./db_user --from-file=./db_password
+kubectl create secret generic jwt-key --from-file=./jwt-key
+rm password db_user db_password jwt-key
+
+## Create a volume for postgres data in EC2
+## Insert volume id in to postgres-data.yaml
+## NOTE: In the future find a better way to automate this.
+
+cd pm-config
+./kube-config.sh
+./deploy.sh
+exit
+
+## Populate the database
+kubectl exec -it <insert postgres pod here> -- /bin/bash
+psql -U postgres
+create database servantscode; #If you change the database name from "servantscode", add env variable DB_NAME to all services
+CREATE USER <db_user> WITH LOGIN PASSWORD '<db_password>'; #You remembered what you configured the db-client-secret with... right?
+GRANT ALL ON DATABASE servantscode TO <db_user>; 
+\c servantscode <db_user>
+# Run db/servantscode.sql script
