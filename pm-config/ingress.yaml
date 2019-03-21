@@ -75,6 +75,10 @@ spec:
         backend:
           serviceName: note-svc
           servicePort: 8080
+      - path: /rest/email
+        backend:
+          serviceName: email-svc
+          servicePort: 8080
       - path: /
         backend:
           serviceName: parish-manager
