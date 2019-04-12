@@ -31,6 +31,10 @@ spec:
         backend:
           serviceName: permission-svc
           servicePort: 8080
+      - path: /rest/password
+        backend:
+          serviceName: permission-svc
+          servicePort: 8080
       - path: /rest/ministry
         backend:
           serviceName: ministry-svc
