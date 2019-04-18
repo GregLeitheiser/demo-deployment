@@ -556,6 +556,61 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  name: sacrament-svc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sacrament-svc
+  template:
+    metadata:
+      labels:
+        app: sacrament-svc
+    spec:
+      containers:
+      - name: sacrament-svc
+        image: servantcode/sacrament-svc
+        ports:
+        - containerPort: 8080
+        resources:
+          limits:
+            memory: "200Mi"
+        env:
+        - name: ES_JAVA_OPTS 
+          value: "-Xmx128m -Xms128m"
+        - name: DB_HOST
+          value: "postgres"
+        - name: DB_USER
+          valueFrom:
+            secretKeyRef:
+              name: db-client-secrets
+              key: db_user
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: db-client-secrets
+              key: db_password
+        - name: JWT_KEY
+          valueFrom:
+            secretKeyRef:
+              name: jwt-key
+              key: jwt-key
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: sacrament-svc
+spec:
+  selector:
+    app: sacrament-svc
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 8080
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
   name: parish-manager
 spec:
   replicas: 1
