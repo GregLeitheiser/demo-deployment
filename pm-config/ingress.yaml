@@ -4,7 +4,7 @@ metadata:
   name: parish-manager-ingress
 spec:
   rules:
-  - host: '*.servantscode.org' 
+  - host: 'localhost' 
     http: 
       paths:
       - path: /rest/person
@@ -12,10 +12,6 @@ spec:
           serviceName: person-svc
           servicePort: 8080
       - path: /rest/family
-        backend:
-          serviceName: person-svc
-          servicePort: 8080
-      - path: /rest/preference
         backend:
           serviceName: person-svc
           servicePort: 8080
@@ -110,6 +106,14 @@ spec:
       - path: /rest/sacrament
         backend:
           serviceName: sacrament-svc
+          servicePort: 8080
+      - path: /rest/department
+        backend:
+          serviceName: parish-svc
+          servicePort: 8080
+      - path: /rest/category
+        backend:
+          serviceName: parish-svc
           servicePort: 8080
       - path: /logs
         backend:
