@@ -721,6 +721,61 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  name: formation-svc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: formation-svc
+  template:
+    metadata:
+      labels:
+        app: formation-svc
+    spec:
+      containers:
+      - name: formation-svc
+        image: servantcode/formation-svc
+        ports:
+        - containerPort: 8080
+        resources:
+          limits:
+            memory: "200Mi"
+        env:
+        - name: ES_JAVA_OPTS 
+          value: "-Xmx128m -Xms128m"
+        - name: DB_HOST
+          value: "postgres"
+        - name: DB_USER
+          valueFrom:
+            secretKeyRef:
+              name: db-client-secrets
+              key: db_user
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: db-client-secrets
+              key: db_password
+        - name: JWT_KEY
+          valueFrom:
+            secretKeyRef:
+              name: jwt-key
+              key: jwt-key
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: formation-svc
+spec:
+  selector:
+    app: formation-svc
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 8080
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
   name: parish-manager
 spec:
   replicas: 1
