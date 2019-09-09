@@ -1,0 +1,9 @@
+#!/bin/bash
+
+./compile_yaml.sh
+cp parish-manager.yaml demo-deployment/pm-config
+
+juju switch juju-controller:kubernetes
+
+juju scp parish-manager.yaml 5:.
+juju ssh 5 "/snap/bin/kubectl apply -f parish-manager.yaml"

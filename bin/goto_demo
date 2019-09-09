@@ -1,0 +1,4 @@
+#!/bin/bash
+
+juju switch juju-controller:kubernetes
+juju ssh 5
