@@ -255,7 +255,7 @@ spec:
     spec:
       containers:
       - name: schedule-svc
-        image: servantcode/schedule-svc:0.0.19.45
+        image: servantcode/schedule-svc:0.0.20.47
         ports:
         - name: http
           containerPort: 8080
