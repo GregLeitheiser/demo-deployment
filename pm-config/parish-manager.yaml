@@ -64,7 +64,7 @@ spec:
     spec:
       containers:
       - name: person-svc
-        image: servantcode/person-svc:0.0.23.92
+        image: servantcode/person-svc:0.0.24.94
         ports:
         - name: http
           containerPort: 8080
@@ -126,7 +126,7 @@ spec:
     spec:
       containers:
       - name: ministry-svc
-        image: servantcode/ministry-svc:0.0.21.48
+        image: servantcode/ministry-svc:0.0.22.50
         ports:
         - name: http
           containerPort: 8080
@@ -188,7 +188,7 @@ spec:
     spec:
       containers:
       - name: permission-svc
-        image: servantcode/permission-svc:0.0.21.45
+        image: servantcode/permission-svc:0.0.22.61
         ports:
         - name: http
           containerPort: 8080
@@ -255,7 +255,7 @@ spec:
     spec:
       containers:
       - name: schedule-svc
-        image: servantcode/schedule-svc:0.0.20.47
+        image: servantcode/schedule-svc:0.0.21.49
         ports:
         - name: http
           containerPort: 8080
@@ -317,7 +317,7 @@ spec:
     spec:
       containers:
       - name: donation-svc
-        image: servantcode/donation-svc:0.0.29.109
+        image: servantcode/donation-svc:0.0.30.111
         ports:
         - name: http
           containerPort: 8080
@@ -379,7 +379,7 @@ spec:
     spec:
       containers:
       - name: metrics-svc
-        image: servantcode/metrics-svc:0.0.20.76
+        image: servantcode/metrics-svc:0.0.21.78
         ports:
         - name: http
           containerPort: 8080
@@ -441,7 +441,7 @@ spec:
     spec:
       containers:
       - name: photo-svc
-        image: servantcode/photo-svc:0.0.19.34
+        image: servantcode/photo-svc:0.0.20.36
         ports:
         - name: http
           containerPort: 8080
@@ -503,7 +503,7 @@ spec:
     spec:
       containers:
       - name: note-svc
-        image: servantcode/note-svc:0.0.19.34
+        image: servantcode/note-svc:0.0.20.36
         ports:
         - name: http
           containerPort: 8080
@@ -565,7 +565,7 @@ spec:
     spec:
       containers:
       - name: email-svc
-        image: servantcode/email-svc:0.0.21.47
+        image: servantcode/email-svc:0.0.22.49
         ports:
         - name: http
           containerPort: 8080
@@ -632,7 +632,7 @@ spec:
     spec:
       containers:
       - name: sacrament-svc
-        image: servantcode/sacrament-svc:0.0.19.34
+        image: servantcode/sacrament-svc:0.0.20.36
         ports:
         - name: http
           containerPort: 8080
@@ -694,7 +694,7 @@ spec:
     spec:
       containers:
       - name: parish-svc
-        image: servantcode/parish-svc:0.0.19.41
+        image: servantcode/parish-svc:0.0.20.43
         ports:
         - name: http
           containerPort: 8080
@@ -756,7 +756,7 @@ spec:
     spec:
       containers:
       - name: search-svc
-        image: servantcode/search-svc:0.0.20.38
+        image: servantcode/search-svc:0.0.21.40
         ports:
         - name: http
           containerPort: 8080
@@ -818,7 +818,7 @@ spec:
     spec:
       containers:
       - name: formation-svc
-        image: servantcode/formation-svc:0.0.19.36
+        image: servantcode/formation-svc:0.0.20.38
         ports:
         - name: http
           containerPort: 8080
@@ -880,7 +880,7 @@ spec:
     spec:
       containers:
       - name: parish-manager
-        image: servantcode/parish-manager:0.0.40.71
+        image: servantcode/parish-manager:0.0.41.73
         ports:
         - name: http
           containerPort: 80
@@ -925,7 +925,7 @@ spec:
     spec:
       containers:
       - name: parishioner
-        image: servantcode/parishioner:0.0.12.31
+        image: servantcode/parishioner:0.0.13.33
         ports:
         - name: http
           containerPort: 80
