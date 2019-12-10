@@ -4,7 +4,7 @@ metadata:
   name: integration-ingress
 spec:
   rules:
-  - host: 'integrations.servantscode.org' 
+  - host: 'dev-integrations.servantscode.org' 
     http: 
       paths:
       - path: /rest/pushpay
