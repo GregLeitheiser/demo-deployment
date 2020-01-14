@@ -880,7 +880,7 @@ spec:
     spec:
       containers:
       - name: integration-svc
-        image: servantcode/integration-svc:0.0.28.130
+        image: servantcode/integration-svc:0.0.31.136
         ports:
         - name: http
           containerPort: 8080
