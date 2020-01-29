@@ -19,7 +19,7 @@ spec:
         - containerPort: 5432
         resources:
           limits:
-            memory: "256Mi"
+            memory: "512Mi"
         env:
         - name: POSTGRES_PASSWORD
           valueFrom:
@@ -64,7 +64,7 @@ spec:
     spec:
       containers:
       - name: person-svc
-        image: servantcode/person-svc:0.0.37.137
+        image: servantcode/person-svc:0.0.40.144
         ports:
         - name: http
           containerPort: 8080
@@ -126,7 +126,7 @@ spec:
     spec:
       containers:
       - name: ministry-svc
-        image: servantcode/ministry-svc:0.0.31.69
+        image: servantcode/ministry-svc:0.0.33.73
         ports:
         - name: http
           containerPort: 8080
@@ -188,7 +188,7 @@ spec:
     spec:
       containers:
       - name: permission-svc
-        image: servantcode/permission-svc:0.0.34.94
+        image: servantcode/permission-svc:0.0.36.98
         ports:
         - name: http
           containerPort: 8080
@@ -255,7 +255,7 @@ spec:
     spec:
       containers:
       - name: schedule-svc
-        image: servantcode/schedule-svc:0.0.30.68
+        image: servantcode/schedule-svc:0.0.32.72
         ports:
         - name: http
           containerPort: 8080
@@ -317,7 +317,7 @@ spec:
     spec:
       containers:
       - name: donation-svc
-        image: servantcode/donation-svc:0.0.45.226
+        image: servantcode/donation-svc:0.0.57.254
         ports:
         - name: http
           containerPort: 8080
@@ -379,7 +379,7 @@ spec:
     spec:
       containers:
       - name: metrics-svc
-        image: servantcode/metrics-svc:0.0.31.116
+        image: servantcode/metrics-svc:0.0.35.131
         ports:
         - name: http
           containerPort: 8080
@@ -441,7 +441,7 @@ spec:
     spec:
       containers:
       - name: photo-svc
-        image: servantcode/photo-svc:0.0.29.55
+        image: servantcode/photo-svc:0.0.31.59
         ports:
         - name: http
           containerPort: 8080
@@ -503,7 +503,7 @@ spec:
     spec:
       containers:
       - name: note-svc
-        image: servantcode/note-svc:0.0.30.57
+        image: servantcode/note-svc:0.0.32.61
         ports:
         - name: http
           containerPort: 8080
@@ -565,7 +565,7 @@ spec:
     spec:
       containers:
       - name: email-svc
-        image: servantcode/email-svc:0.0.32.76
+        image: servantcode/email-svc:0.0.34.80
         ports:
         - name: http
           containerPort: 8080
@@ -632,7 +632,7 @@ spec:
     spec:
       containers:
       - name: sacrament-svc
-        image: servantcode/sacrament-svc:0.0.29.55
+        image: servantcode/sacrament-svc:0.0.31.59
         ports:
         - name: http
           containerPort: 8080
@@ -694,7 +694,7 @@ spec:
     spec:
       containers:
       - name: parish-svc
-        image: servantcode/parish-svc:0.0.29.64
+        image: servantcode/parish-svc:0.0.31.68
         ports:
         - name: http
           containerPort: 8080
@@ -756,7 +756,7 @@ spec:
     spec:
       containers:
       - name: search-svc
-        image: servantcode/search-svc:0.0.31.62
+        image: servantcode/search-svc:0.0.33.66
         ports:
         - name: http
           containerPort: 8080
@@ -818,7 +818,7 @@ spec:
     spec:
       containers:
       - name: formation-svc
-        image: servantcode/formation-svc:0.0.30.62
+        image: servantcode/formation-svc:0.0.32.66
         ports:
         - name: http
           containerPort: 8080
@@ -880,7 +880,7 @@ spec:
     spec:
       containers:
       - name: integration-svc
-        image: servantcode/integration-svc:0.0.31.136
+        image: servantcode/integration-svc:0.0.33.140
         ports:
         - name: http
           containerPort: 8080
@@ -942,7 +942,7 @@ spec:
     spec:
       containers:
       - name: parish-manager
-        image: servantcode/parish-manager:0.0.64.121
+        image: servantcode/parish-manager:0.0.71.136
         ports:
         - name: http
           containerPort: 80
@@ -987,7 +987,7 @@ spec:
     spec:
       containers:
       - name: parishioner
-        image: servantcode/parishioner:0.0.22.51
+        image: servantcode/parishioner:0.0.24.55
         ports:
         - name: http
           containerPort: 80
