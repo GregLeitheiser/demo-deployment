@@ -317,7 +317,7 @@ spec:
     spec:
       containers:
       - name: donation-svc
-        image: servantcode/donation-svc:0.0.57.254
+        image: servantcode/donation-svc:0.0.58.257
         ports:
         - name: http
           containerPort: 8080
@@ -379,7 +379,7 @@ spec:
     spec:
       containers:
       - name: metrics-svc
-        image: servantcode/metrics-svc:0.0.35.131
+        image: servantcode/metrics-svc:0.0.37.138
         ports:
         - name: http
           containerPort: 8080
@@ -942,7 +942,7 @@ spec:
     spec:
       containers:
       - name: parish-manager
-        image: servantcode/parish-manager:0.0.71.136
+        image: servantcode/parish-manager:0.0.73.140
         ports:
         - name: http
           containerPort: 80
