@@ -942,7 +942,7 @@ spec:
     spec:
       containers:
       - name: parish-manager
-        image: servantcode/parish-manager:0.0.73.140
+        image: servantcode/parish-manager:0.0.74.142
         ports:
         - name: http
           containerPort: 80
