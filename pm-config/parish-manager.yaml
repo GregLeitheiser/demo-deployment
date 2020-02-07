@@ -64,7 +64,7 @@ spec:
     spec:
       containers:
       - name: person-svc
-        image: servantcode/person-svc:0.0.40.144
+        image: servantcode/person-svc:0.0.42.149
         ports:
         - name: http
           containerPort: 8080
@@ -942,7 +942,7 @@ spec:
     spec:
       containers:
       - name: parish-manager
-        image: servantcode/parish-manager:0.0.74.142
+        image: servantcode/parish-manager:0.0.77.148
         ports:
         - name: http
           containerPort: 80
