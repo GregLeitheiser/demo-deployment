@@ -64,7 +64,7 @@ spec:
     spec:
       containers:
       - name: person-svc
-        image: servantcode/person-svc:0.0.42.149
+        image: servantcode/person-svc:0.0.44.155
         ports:
         - name: http
           containerPort: 8080
