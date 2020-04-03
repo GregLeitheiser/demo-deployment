@@ -818,7 +818,7 @@ spec:
     spec:
       containers:
       - name: formation-svc
-        image: servantcode/formation-svc:0.0.45.163
+        image: servantcode/formation-svc:0.0.46.167
         ports:
         - name: http
           containerPort: 8080
@@ -942,7 +942,7 @@ spec:
     spec:
       containers:
       - name: parish-manager
-        image: servantcode/parish-manager:0.0.82.158
+        image: servantcode/parish-manager:0.0.83.160
         ports:
         - name: http
           containerPort: 80
